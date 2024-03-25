@@ -3,8 +3,7 @@ from utils.mongodb.MongoCollection import MongoCollection
 
 class DjangoAppPersistence(MongoCollection):
     def __init__(self):
-        self.collectionName = 'first'
-        super().__init__(collectionName=self.collectionName)
+        super().__init__(collectionName='first')
 
     def findById(self, id):
         result = super().findById(id)
