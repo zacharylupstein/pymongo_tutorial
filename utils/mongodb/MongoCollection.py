@@ -17,3 +17,8 @@ class MongoCollection:
         foundDocs = self.collection.find({field: searchValue})
         return foundDocs
 
+    def updateOne(self, id, updateData):
+        query = {"_id": ObjectId(id)}
+        updates = { "$set": updateData }
+        result = self.collection.update_one(query, updates)
+
